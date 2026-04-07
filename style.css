@@ -510,3 +510,42 @@ footer { padding: 3rem 0; background-color: #ffece0; border-top: 1px solid rgba(
     .math-label { top: 30%; left: 25%; font-size: 0.55rem; }
     .syllables-label { top: 55%; left: 15%; font-size: 0.55rem; }
 }
+
+/* Floating Mobile CTA */
+.floating-mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #4cd137;
+    background: linear-gradient(90deg, #4cd137, #2ecc71);
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    z-index: 9999;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+    border-top: 2px solid rgba(255,255,255,0.4);
+}
+
+@media (max-width: 768px) {
+    .floating-mobile-cta {
+        display: block;
+        animation: slide-up-cta 0.6s ease-out forwards;
+    }
+    
+    @keyframes slide-up-cta {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+    }
+    
+    /* Prevenir que o footer seja tampado pelo botão */
+    body {
+        padding-bottom: 75px;
+    }
+}
